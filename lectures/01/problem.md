@@ -57,9 +57,11 @@ uv run python -m app.ask "AIE2026の講座で使う「lecNN-start タグ」と�
 uv run python -m app.ask "AIE2026の第2回では何を学びますか？"
 ```
 
+回答の後は同じ会話の履歴を保ったまま、続けて質問できます。終了するには `exit` または `quit` を入力してください。
+
 ### 6. Copilot でトークン数を表示させる
 
-`app/ask.py` の `TODO(第1回 演習)` の場所で、入力トークン数と出力トークン数を表示するよう改修します。Copilot の補完やチャットを使ってかまいません。提案されたコードは、読んで理解してから採用してください。
+`app/ask.py` は入力トークン数と出力トークン数を表示します。実行結果で数値を確認し、モデルや質問によってどう変わるか比べてみましょう。
 
 ### 7. ブランチを作って PR を出す
 
@@ -91,4 +93,4 @@ GitHub の自分の fork で、`lec01` → `main` の PR を作成します。**
 AIE_MODEL=gemini-3.5-flash uv run python -m app.ask "LoRAとは何ですか？"
 ```
 
-temperature を変えるには、`generate_content` の `config` 引数を調べてみましょう。
+temperature を変えるには、`chat.send_message` の `config` 引数を調べてみましょう。
